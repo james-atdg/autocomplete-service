@@ -114,6 +114,7 @@ public class CurbeeService {
      */
     private void buildIndex() {
     	Date start = new Date();
+    	long totalRecordsInIndex = 0;
     	for (int prefixLength = 2; prefixLength <= maxSearchStringLength; prefixLength++) {
 		    String currentPrefix = null;
 		    for (String word : words) {
@@ -121,14 +122,18 @@ public class CurbeeService {
 			    	if (currentPrefix == null || !currentPrefix.equals(word.substring(0, prefixLength))) {
 			    		currentPrefix = word.substring(0, prefixLength);
 			    		index.put(currentPrefix, new HashSet<>(Arrays.asList(word)));
+			    		totalRecordsInIndex++;
 			    	}
 			    	else {
 			    		index.get(currentPrefix).add(word);
+			    		totalRecordsInIndex++;
 			    	}
 		    	}
 		    }
 	    }
     	logger.info("Index initialization took (ms): " + ((new Date()).getTime() - start.getTime()));
+    	logger.info("Dictionary record count: " + words.size());
+    	logger.info("Index record count: " + totalRecordsInIndex);
     	
     }
     
