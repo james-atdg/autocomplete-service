@@ -1,4 +1,4 @@
-# Curbee Auto-complete service
+# Auto-complete service
 The service provides auto-complete suggestions for user supplied search strings against a known dictionary.
 
 ### Description
@@ -33,14 +33,13 @@ The application may be accessed at: http://localhost:8082
 
 
 ### Improvements & Effort
-Overall this implementation was about 4 hours of effort.  The index service and controller implementation took under an hour and the bulk of the effort centered around testing and validating the approach.  Some time was spent at the onset trying an implementation using the KMP algorithm to facilitate a contains matching strategy (match if user supplied value appears anywhere in word) before I realized the specification called for auto-complete which uses 'starts with' matching.
+Overall this implementation was about 4 hours of effort.  The index service and controller implementation took under an hour and the bulk of the effort centered around testing and validating the approach.  Some time was spent at the onset trying an implementation using the KMP algorithm to facilitate a 'contains' matching solution before I realized the specification called for auto-complete which uses 'starts with' matching.  I think this is a clean, easy to understand, well performing solution for auto-complete suggestions against dictionaries.  There's a few things I'd consider if I had unlimited cycles:
 
-Some things I'd consider if I had unlimited cycles:
+* try processing the dictionary in parallel to build the index, perhaps grouped by starting letter, and see if this optimizes indexing for much larger dictionaries
+* benchmark performance at load on a few instance types
+* try caching the index to a file and reading it in at startup to see if startup performance improves
+* test this with other dictionaries
 * allow users to specify max results instead of defaulting to 10
 * provide an option to match on words containing the value instead of just beginning with it
 * provide details on index byte size to better measure memory usage for different dictionaries
-* try caching the index to a file and reading it in at startup to see if startup performance improves
-* test this with other dictionaries
-* try processing the dictionary in parallel to build the index, perhaps grouped by starting letter, and see if this optimizes indexing for much larger dictionaries
-
 
