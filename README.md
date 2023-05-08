@@ -27,9 +27,9 @@ To build the project execute <b>build.sh</b> from within the project directory.
 
 To run the application after building execute <b>run.sh</b> from within the project directory.
 
-The application may be accessed at: http://localhost:8082
-* auto-complete end-point: GET [http://localhost:8082/api/curbee/autocomplete/<prefix>](http://localhost:8082/api/curbee/autocomplete/<prefix>)
-* rest api documentation: [http://localhost:8082/swagger-ui/index.html?displayRequestDuration=true&operationsSorter=method&configUrl=/api-docs/swagger-config#/](http://localhost:8082/swagger-ui/index.html?displayRequestDuration=true&operationsSorter=method&configUrl=/api-docs/swagger-config#/)
+The application may be accessed at: GET [http://localhost:8082/api/curbee/autocomplete/{prefix}](http://localhost:8082/api/curbee/autocomplete/)
+
+API documentation is available at: [http://localhost:8082/swagger-ui/index.html?displayRequestDuration=true&operationsSorter=method&configUrl=/api-docs/swagger-config#/](http://localhost:8082/swagger-ui/index.html?displayRequestDuration=true&operationsSorter=method&configUrl=/api-docs/swagger-config#/)
 
 
 ### Improvements & Effort
