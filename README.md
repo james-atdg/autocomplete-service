@@ -33,7 +33,7 @@ API documentation is available at: [http://localhost:8082/swagger-ui/index.html?
 
 
 ### Improvements & Effort
-Overall this implementation was about 4 hours of effort.  The index service and controller implementation took under an hour and the bulk of the effort centered around testing and validating the approach.  Some time was spent at the onset trying an implementation using the KMP algorithm to facilitate a 'contains' matching solution before I realized the specification called for auto-complete which uses 'starts with' matching.  I think this is a clean, easy to understand, well performing solution for auto-complete suggestions against dictionaries.  There's a few things I'd consider if I had unlimited cycles:
+Overall this implementation was about 4 hours of effort.  The index service and controller implementation took under an hour and the bulk of the effort centered around testing and validating the approach.  Some time was spent at the onset trying an implementation using the KMP algorithm to facilitate a 'contains' matching solution before I realized the specification called for auto-complete which uses 'starts with' matching.  I think this is a clean, easy to understand, well performing solution for auto-complete suggestions against dictionaries.  There are a few things I'd consider if I had unlimited cycles:
 
 * try processing the dictionary in parallel to build the index, perhaps grouped by starting letter, and see if this optimizes indexing for much larger dictionaries
 * benchmark performance at load on a few instance types
