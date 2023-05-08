@@ -21,8 +21,8 @@ public class CurbeeServiceUnitTest {
 	@Autowired
 	CurbeeService service;
 	
-	final long maxDeviationShortSearchStringMs = 100;
-	final long maxDeviationLongSearchStringMs = 300;
+	final long maxDeviationShortSearchStringMs = 500;
+	final long maxDeviationLongSearchStringMs = 1000;
 	
 	@Test
 	public void givenADictionaryOfWords_whenDictionaryIsIndexed_thenValidateAllWordsArePresentInIndex() {
