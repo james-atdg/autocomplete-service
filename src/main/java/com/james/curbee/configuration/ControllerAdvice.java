@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.james.curbee.exception.ErrorMessage;
 import com.james.curbee.exception.ErrorType;
-import com.james.curbee.exception.NoSuggestionsException;
 import com.james.curbee.exception.ServiceException;
 import com.james.curbee.util.LocaleMessageSource;
 

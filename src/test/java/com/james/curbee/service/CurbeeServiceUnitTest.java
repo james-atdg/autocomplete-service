@@ -67,6 +67,7 @@ public class CurbeeServiceUnitTest {
 			Long start = Instant.now().toEpochMilli();
 			boolean longPrefix = key.length() <= service.maxSearchStringLength;
 			if (longPrefix)  {
+				@SuppressWarnings("unused")
 				List<String> matches = service.searchWords(key);
 				Long duration = Instant.now().toEpochMilli() - start;
 				
